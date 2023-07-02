@@ -1,3 +1,34 @@
+let inputImage;
+
+//Variable qui va chercher input type = file
+const fileSelector = document.getElementById('uploadImage');
+//On écoute l'évènement change de fileSelector
+fileSelector.addEventListener('change', (event) => {
+  //Variable qui permet d'accéder aux fichiers capté par input type = file
+  const fileList = event.target.files;
+  //Log les metadata des fichiers
+  console.log(fileList);
+
+  readImage(fileList[0]);
+});
+
+function readImage(file) {
+  // Vérifie que le fichier est une image.
+  if (file.type && !file.type.startsWith('image/')) {
+    console.log('File is not an image.', file.type, file);
+    return;
+  }
+
+  const reader = new FileReader();
+
+  //On écoute n'évènement load de reader
+  reader.addEventListener('load', (event) => {
+    inputImage = event.target.result.split(',')[1];;
+  });
+
+  reader.readAsDataURL(file);
+}
+
 //Configurer le bouton permettant l'envoi des infos vers l'API
 //Variable pour cibler le bouton
 const creationButton = document.getElementById("creationButton");
@@ -13,14 +44,12 @@ creationButton.addEventListener("click", function (event) {
 
   let name = document.getElementById("nameLabel");
   let shortDescription = document.getElementById("shortDescriptionLabel");
-  let imageInput = document.getElementById("uploadImage");
   let description = document.getElementById("descriptionLabel");
 
   //Déclare des variables récupérant les données entrées par l'utilisateur
 
   let inputName = name.value;
   let inputShortDescription = shortDescription.value;
-  let inputImage = imageInput.value;
   let inputDescription = description.value;
 
   //Construire l'objet avec les valeurs du formulaire, en accord avec le contrat de l'API (défini dans une doc)
@@ -52,7 +81,11 @@ creationButton.addEventListener("click", function (event) {
     //Quand on a reçu les données JSON demandées, on demande de log le message "Success" et la réponse
     .then(result => {
       console.log("Success:", result);
-      // Process the response data here
+
+      // Redirection vers une autre page
+      // TODO: la bonne page
+      window.location.href = "character-list.html";
+
     })
     //Catch intercepte une erreur s'il y en a
     .catch(error => {
@@ -60,4 +93,3 @@ creationButton.addEventListener("click", function (event) {
       console.error("Error:", error);
     });
 })
-
