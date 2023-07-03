@@ -1,95 +1,3 @@
-
-<!-- Le code pour la Create CaracterPage
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Character Manager</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/99e5b11f7e.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Characters Manager</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          </div>
-        </div>
-      </nav>
-
-    <div class="container">
-
-        <div class="card">
-
-            <form id="CharacterForm" action="https://character-database.becode.xyz/characters" method="POST" enctype="multipart/form-data">
-
-                <div class="ps-4 w-50 mt-4">
-                    <label class="mb-2" for="name">Name :</label>
-                    <input class="form-control" type="text" id="name" name="name" required><br><br>
-                </div>
-
-                <div class="ps-4 pe-4">
-                    <label class="mb-2" for="shortDescription">Short Description :</label>
-                    <input class="form-control" type="text" id="shortDescription" name="shortDescription" required><br><br>
-                </div>
-
-            <div class="ps-4 pe-4">
-                <label class="mb-2" for="description">Description :</label><br>
-                <textarea class="form-control" id="description" name="description" rows="4" cols="50" required></textarea><br><br>
-            </div>
-
-            <div class="ps-4 pe-4">
-                <label class="mb-2" for="image">Image :</label>
-                <input class="form-control" type="file" id="imageInput" accept="image/jpeg" required><br><br>
-
-            </div>
-
-            <input class="btn btn-outline-success ms-4 mb-4" type="submit" value="Create Character">
-          </form>
-
-
-        </div>
-
-    </div>
-
-      <footer>
-        
-        <div class="container-fluid w-auto text-center bg-body-tertiary border mt-5 pt-5 pb-5">
-            <div class="card-header mb-2">
-            Un site réalisé par
-            </div>
-            <div class="card-body">
-            <h5 class="card-title">Marius, Adeline & Jérôme</h5>
-            <p class="card-text mt-3">during our apprenticeship @BeCode</p>
-            </div>
-            <div class="card-footer text-body-secondary mt-2 ">
-            June/July 2023
-            </div>
-        </div>
-    
-    </footer>
-
-      <script src="SinglePage.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-  
-</body>
-
-
-
-
-</html>
--->
-
-
-
-<!-- Le code Pour la SinglePage
 <!doctype html>
 <html lang="en">
   <head>
@@ -103,22 +11,26 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Characters Manager</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Characters Manager</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item d-flex">
+          <a class="nav-link" href="#">Create a new character</a>
+        </li>
+        <li class="nav-item dropdown">
+    </div>
+  </div>
+</nav>
 
 
-
-            </ul>
-
-          </div>
-        </div>
-      </nav>
 
     <div class="CharactersContainer container text-center align-items-center">
 
@@ -186,4 +98,95 @@
 
 </html>
 
+
+
+<!-- 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Character Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/99e5b11f7e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Characters Manager</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+
+        <div class="card mt-5">
+
+            <form id="CharacterForm" action="https://character-database.becode.xyz/characters" method="POST" enctype="multipart/form-data">
+
+                <div class="ps-4 w-50 mt-4">
+                    <label class="mb-2" for="name">Name :</label>
+                    <input class="form-control" type="text" id="name" name="name" required><br><br>
+                </div>
+
+                <div class="ps-4 pe-4">
+                    <label class="mb-2" for="shortDescription">Short Description :</label>
+                    <input class="form-control" type="text" id="shortDescription" name="shortDescription" required><br><br>
+                </div>
+
+            <div class="ps-4 pe-4">
+                <label class="mb-2" for="description">Description :</label><br>
+                <textarea class="form-control" id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+            </div>
+
+            <div class="ps-4 pe-4">
+                <label class="mb-2" for="image">Image :</label>
+                <input class="form-control" type="file" id="imageInput" accept="image/jpeg" required><br><br>
+
+            </div>
+
+            <input class="btn btn-outline-success ms-4 mb-4" type="submit" value="Create Character">
+          </form>
+
+
+        </div>
+
+    </div>
+
+      <footer>
+        
+        <div class="container-fluid w-auto text-center bg-body-tertiary border mt-5 pt-5 pb-5">
+            <div class="card-header mb-2">
+            Un site réalisé par
+            </div>
+            <div class="card-body">
+            <h5 class="card-title">Marius, Adeline & Jérôme</h5>
+            <p class="card-text mt-3">during our apprenticeship @BeCode</p>
+            </div>
+            <div class="card-footer text-body-secondary mt-2 ">
+            June/July 2023
+            </div>
+        </div>
+    
+    </footer>
+
+      <script src="SinglePage.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  
+</body>
+
+
+
+
+</html>
 -->
+
+
+
