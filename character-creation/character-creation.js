@@ -71,7 +71,7 @@ creationButton.addEventListener("click", function (event) {
     headers: {
       "Content-Type": "application/json",
     },
-    //Transforme les données envoyées en string format JSON dans le body (qui est le corps de ma requête, ce que j'envoi effectivement à l'API)
+    //Transforme les données envoyées en string format JSON dans le body (qui est le corps de la requête, ce que j'envoi effectivement à l'API)
     body: JSON.stringify(newCharacter),
   })
     //Traitement de la réponse: 
