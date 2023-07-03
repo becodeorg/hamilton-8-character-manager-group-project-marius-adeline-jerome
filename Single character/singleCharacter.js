@@ -14,6 +14,7 @@ fetch(`https://character-database.becode.xyz/characters/`+id)
     
     const CharacterCard = document.querySelector(".card")
     CharacterCard.classList.add("mb-5")
+    
     // Chopper l'image
     const image = data.image;
     // Crée une const "image" qui va chercher l'élément "image" dans la data du fichier qui a été fetch.
