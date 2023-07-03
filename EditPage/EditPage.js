@@ -12,7 +12,7 @@ const id = (new URLSearchParams(window.location.search)).get("id")
 fetch(`https://character-database.becode.xyz/characters/${id}`)
 */
 
-const URL = `https://character-database.becode.xyz/characters/086a6d93-9861-418d-aed2-8b1a9e31460b`;
+const URL = `https://character-database.becode.xyz/characters/e3939a32-c38b-4623-a540-0df8545b894f`;
 
 //Récupère les informations initiales du perso
 fetch(URL)

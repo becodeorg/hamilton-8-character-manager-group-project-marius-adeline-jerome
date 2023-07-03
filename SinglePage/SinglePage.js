@@ -1,5 +1,3 @@
-
-
 fetch("https://character-database.becode.xyz/characters")
 .then(response => response.json())
 .then(data => {
@@ -28,6 +26,7 @@ fetch("https://character-database.becode.xyz/characters")
         CharacterCard.appendChild(Characterimg);
         Characterimg.classList.add("w-100");
 
+
         //Récupère le nom du personnage
         const CharacterName = document.createElement("h5");
         CharacterName.classList.add("CharacterName");
@@ -49,7 +48,7 @@ fetch("https://character-database.becode.xyz/characters")
         CharacterID.classList.add("CharacterID");
         CharacterID.textContent = data[i].id;
         CharacterCard.appendChild(CharacterID);
-        //CharacterID.style.display = "none";
+        CharacterID.style.display = "none";
 
         //Crée un boutton "View more"
         const VMButton = document.createElement("a");
