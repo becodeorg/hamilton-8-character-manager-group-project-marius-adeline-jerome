@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@wysimark/standalone": "^2.6.0"
+  }
+}
