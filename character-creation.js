@@ -84,7 +84,7 @@ creationButton.addEventListener("click", function (event) {
 
       // Redirection vers une autre page
       // TODO: la bonne page
-      window.location.href = "character-list.html";
+      window.location.href = "index.html";
 
     })
     //Catch intercepte une erreur s'il y en a
