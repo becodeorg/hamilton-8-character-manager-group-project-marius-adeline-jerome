@@ -77,7 +77,7 @@ if (response){
 fetch(`https://character-database.becode.xyz/characters/` + id, init)
     .then(response => response.json())
     .then(() => {
-        window.location.replace('../index.html')
+        window.location.replace('/index.html')
         // Permet de remplacer l'URL par un autre à la fin de l'action. Ici, redirige vers index.html.
         })
         
