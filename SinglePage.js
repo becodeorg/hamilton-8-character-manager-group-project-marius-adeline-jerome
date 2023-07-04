@@ -53,7 +53,7 @@ fetch("https://character-database.becode.xyz/characters")
         //Crée un boutton "View more"
         const VMButton = document.createElement("a");
         VMButton.href = "#";
-        //VMButton.href = "?id="+data[i].id;
+        VMButton.href = "singleCharacter.html?id="+data[i].id;
         VMButton.classList.add("btn");
         VMButton.classList.add("btn-primary");
         VMButton.classList.add("w-80");
