@@ -5,17 +5,11 @@ const FormDescription = document.getElementById("FormDescription");
 const FormImage = document.getElementById("FormImage");
 let ExistingImage;
 
-/*
+
 const id = (new URLSearchParams(window.location.search)).get("id")
     // Window = fenêtre actuelle/page Location = tout ce qui se rapporte à l'url
 
 fetch(`https://character-database.becode.xyz/characters/${id}`)
-*/
-
-const URL = `https://character-database.becode.xyz/characters/e3939a32-c38b-4623-a540-0df8545b894f`;
-
-//Récupère les informations initiales du perso
-fetch(URL)
 .then(response => response.json())
 .then(data => {
     
@@ -62,7 +56,7 @@ const ImageInput = document.getElementById("FormNewImage");
     };
 
     //PUT le nouveau tableau Json
-  fetch(URL, {
+    fetch(`https://character-database.becode.xyz/characters/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -117,7 +111,7 @@ const ImageInput = document.getElementById("FormNewImage");
     };
 
 
-    fetch(URL, {
+    fetch(`https://character-database.becode.xyz/characters/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
