@@ -14,7 +14,7 @@ fetch(`https://character-database.becode.xyz/characters/`+id)
     
     const CharacterCard = document.querySelector(".card")
     CharacterCard.classList.add("mb-5")
-    
+
     // Chopper l'image
     const image = data.image;
     // Crée une const "image" qui va chercher l'élément "image" dans la data du fichier qui a été fetch.
@@ -50,7 +50,7 @@ fetch(`https://character-database.becode.xyz/characters/`+id)
     buttonEdit.classList.add("btn", "btn-outline-success", "w-25", "me-5");
     buttonEdit.textContent="Edit";
     formButtons.append(buttonEdit);
-    buttonEdit.href="";
+    buttonEdit.href="EditPage.html?id="+id;
 
     const buttonDelete = document.createElement("a");
     buttonDelete.textContent = "Delete";
@@ -70,6 +70,7 @@ function deleteTheCharacter(id) {
     let init = {
         method: "DELETE"
         // La méthode delete supprime la ressource indiquée. Ici elle est liée à une fonction et sera appliquée en même temps que celle-ci.
+
     }
 
 if (response){
@@ -79,4 +80,6 @@ fetch(`https://character-database.becode.xyz/characters/` + id, init)
 
         });
     }
+    window.location.replace('../index.html')
+
 }
