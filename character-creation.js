@@ -1,92 +1,14 @@
-let inputImage;
+import { setupFileUpload } from './modules-js/image-upload.js';
+import { setupCreationButton } from './modules-js/creation-button.js';
 
 // Appel de la fonction d'initialisation de l'application
 initializeApp();
 
 // Fonction pour initialiser l'application
 function initializeApp() {
-  const fileSelector = document.getElementById('uploadImage');
-  fileSelector.addEventListener('change', handleFileChange);
-
-  const creationButton = document.getElementById("creationButton");
-  creationButton.addEventListener('click', retrieveDataFromFormAndSendToApi);
+  setupFileUpload();
+  setupCreationButton();
 }
 
-
-// Fonction pour traiter l'événement de changement de fichier
-function handleFileChange(event) {
-  const fileList = event.target.files;
-  console.log(fileList);
-
-  readImage(fileList[0]);
-}
-
-// Fonction pour lire l'image
-function readImage(file) {
-  if (file.type && !file.type.startsWith('image/')) {
-    console.log('File is not an image.', file.type, file);
-    return;
-  }
-
-  const reader = new FileReader();
-
-  reader.addEventListener('load', (event) => {
-    inputImage = event.target.result.split(',')[1];
-  });
-
-  reader.readAsDataURL(file);
-}
-
-// Fonction pour envoyer les données vers l'API
-function retrieveDataFromFormAndSendToApi(event) {
-//TODO une fonction
-  event.preventDefault();
-
-  const url = "https://character-database.becode.xyz/characters";
-  const newCharacter = createCharacterObject();
-
-  console.log(newCharacter);
-
-  sendRequest(url, newCharacter)
-    .then(handleSuccess)
-    .catch(handleError);
-}
-
-// Fonction qui récupère les valeurs des champs du formulaire et renvoi l'objet correspondant
-function createCharacterObject() {
-  const name = document.getElementById("nameLabel").value;
-  const shortDescription = document.getElementById("shortDescriptionLabel").value;
-  const description = document.getElementById("descriptionLabel").value;
-
-  return {
-    name: name,
-    shortDescription: shortDescription,
-    image: inputImage,
-    description: description
-  };
-}
-
-// Fonction qui envoi la requêtte HTTP POST à l'API en utilisant fetch et qui renvoi la réponse sous forme de promesse
-function sendRequest(url, data) {
-  return fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then(response => response.json());
-}
-
-// Fonction appelée lorsque la requête est réussie
-function handleSuccess(result) {
-  console.log("Success:", result);
-  window.location.href = "index.html";
-}
-
-// Fonction appelée en cas d'erreur de la requếte 
-function handleError(error) {
-  console.error("Error:", error);
-}
 
 
