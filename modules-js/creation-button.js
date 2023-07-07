@@ -1,6 +1,10 @@
 import { base64Image } from './image-upload.js';
 
-export function setupCreationButton() {
+let markdownEditor;
+
+export function setupCreationButton(wysimark) {
+    markdownEditor = wysimark;
+
     const creationButton = document.getElementById("creationButton");
     creationButton.addEventListener('click', retrieveDataFromFormAndSendToApi);
 }
@@ -31,13 +35,12 @@ function preventFromReloadPage(event) {
 function createCharacterObject() {
     const name = document.getElementById("nameLabel").value;
     const shortDescription = document.getElementById("shortDescriptionLabel").value;
-    const description = document.getElementById("descriptionLabel").value;
 
     return {
         name: name,
         shortDescription: shortDescription,
         image: base64Image,
-        description: description
+        description: markdownEditor.getMarkdown()
     };
 }
 
