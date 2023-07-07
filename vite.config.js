@@ -6,6 +6,7 @@ export default {
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'character-creation.html'),
+
             }
         }
     }

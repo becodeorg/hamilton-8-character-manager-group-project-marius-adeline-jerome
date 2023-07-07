@@ -1,4 +1,5 @@
-import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 import { setupFileUpload } from './modules-js/image-upload.js';
 import { setupCreationButton } from './modules-js/creation-button.js';
 
