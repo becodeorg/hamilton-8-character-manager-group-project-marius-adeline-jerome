@@ -1,11 +1,10 @@
 
+
 const id = (new URLSearchParams(window.location.search)).get("id")
     // Window = fenêtre actuelle/page Location = tout ce qui se rapporte à l'url 
     // URLSearchParams définit des méthodes utilitaires pour travailler avec la chaîne de requête (les paramètres GET) d’une URL.
     // La propriété en lecture seule Window.location renvoie un objet Location(URL) qui contient des informations à propos de l'emplacement courant du document.
     // The search property of the Location interface is a search string, also called a query string; that is, a string containing a '?' followed by the parameters of the URL.
-
-
 
 
 fetch(`https://character-database.becode.xyz/characters/`+id)
@@ -14,6 +13,7 @@ fetch(`https://character-database.becode.xyz/characters/`+id)
     
     const CharacterCard = document.querySelector(".card")
     CharacterCard.classList.add("mb-5")
+
 
     // Chopper l'image
     const image = data.image;
@@ -24,7 +24,6 @@ fetch(`https://character-database.becode.xyz/characters/`+id)
     // .setAttribute crée 2 arguments: le nom de l'attribut et la valeur à lui être assignée.
     // La valeur est une template literal dans des backticks.
     CharacterCard.append(CharacterImg);
-
 
     // Chopper le nom
     const CharacterName = document.createElement("h5");
@@ -77,9 +76,15 @@ if (response){
 fetch(`https://character-database.becode.xyz/characters/` + id, init)
     .then(response => response.json())
     .then(() => {
-
-        });
+        window.location.href='/index.html';
+        // Permet de remplacer l'URL par un autre à la fin de l'action. Ici, redirige vers index.html.
+        // Plutôt utiliser .href plutôt que .replace
+        })
+        
+    
+    .catch(error => {
+        // Handle any errors that occurred during the fetch request
+        console.log(error);
+    });
     }
-    window.location.replace('../index.html')
-
 }
